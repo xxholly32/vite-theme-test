@@ -10,6 +10,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Prism from 'markdown-it-prism'
+import { viteThemePlugin } from 'vite-plugin-theme';
 
 export default defineConfig({
   resolve: {
@@ -20,6 +21,11 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
+    }),
+
+    viteThemePlugin({
+      // Match the color to be modified
+       colorVariables: [],
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
