@@ -1,14 +1,12 @@
 import { defineConfig } from 'vite-plugin-windicss'
 import colors from 'windicss/colors'
+import plugin from 'windicss/plugin'
 import typography from 'windicss/plugin/typography'
 
-const primaryColor = '#0960bd';
+const primaryColor = "#e72528";
 
 export default defineConfig({
   darkMode: 'class',
-  plugins: [
-    typography(),
-  ],
   theme: {
     extend: {
       typography: {
@@ -39,4 +37,18 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    typography(),
+    plugin(({ addUtilities }) => {
+      const newUtilities = {
+        '.test-color': {
+          backgroundColor: primaryColor,
+        },
+        '.skew-15deg': {
+          transform: 'skewY(-15deg)',
+        },
+      }
+      addUtilities(newUtilities)
+    }),
+  ]
 })

@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { ref } from "vue"
 import { useI18n } from 'vue-i18n'
-import { isDark, toggleDark } from '~/logic'
+import { isDark, toggleDark, useTheme } from '~/logic'
 
 const { t, availableLocales, locale } = useI18n()
+
+const theme = useTheme()
 
 const toggleLocales = () => {
   // change to some real logic
@@ -33,5 +36,6 @@ const toggleLocales = () => {
     <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
       <carbon-logo-github />
     </a>
+    <input type="color" name="color" v-model="theme">
   </nav>
 </template>
