@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 3333",
-    "build": "cross-env NODE_ENV=production vite-ssg build",
+    "build": "vite build",
     "preview": "vite preview",
     "preview-https": "serve dist"
   },
@@ -39,7 +39,6 @@
     "vite-plugin-theme": "^0.7.1",
     "vite-plugin-vue-layouts": "^0.2.2",
     "vite-plugin-windicss": "^0.15.10",
-    "vite-ssg": "^0.9.3",
     "vue-tsc": "^0.0.26"
   }
 }
