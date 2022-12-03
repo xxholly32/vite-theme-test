@@ -6,7 +6,7 @@ const primary = "#e72528"
 
 export function useTheme() {
   const theme = ref(localStorage.getItem('theme-schema') || primary)
-  useStorage('theme-schema', theme)
+  useStorage('theme-schema', theme.value)
 
   watchEffect(() => {
     changeTheme(theme.value)
